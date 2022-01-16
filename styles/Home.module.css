@@ -19,6 +19,7 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  color: aliceblue;
 }
 
 .footer a {
@@ -27,7 +28,10 @@
   align-items: center;
   flex-grow: 1;
 }
-
+.projContainer {
+  display: flex;
+  overflow-x: auto;
+}
 .title a {
   color: #0070f3;
   text-decoration: none;
@@ -42,7 +46,11 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  width: 100%;
+  color: #e6a10e;
+  font-size: 3rem;
+  padding: 20px;
+  background-color: #0c2138;
 }
 
 .title,
@@ -70,26 +78,30 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .card {
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
-  color: inherit;
+  color: #eaeaea;
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 400px;
+  min-height: 600px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #e6a10e;
+  border-color: #e6a10e;
 }
 
 .card h2 {
@@ -98,8 +110,8 @@
 }
 
 .card p {
-  margin: 0;
-  font-size: 1.25rem;
+  margin: 2px;
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
@@ -107,10 +119,77 @@
   height: 1em;
   margin-left: 0.5rem;
 }
-
+.image {
+  max-width: 100%;
+  min-height: 205px;
+  margin: 5px;
+  border: solid black 3px;
+  border-radius: 10px;
+}
+.image:hover {
+  cursor: pointer;
+}
+.tech {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  max-height: 112px;
+  min-height: 112px;
+  overflow-y: auto;
+}
+.tech::-webkit-scrollbar {
+  display: none;
+}
+.ptitle {
+  align-self: center;
+  justify-self: center;
+}
+.techstack {
+  display: none;
+}
+.techstack:hover {
+  cursor: pointer;
+  color: #e6a10e;
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 52%;
+  left: 15%;
+  background-color: #64656bec;
+  width: 70%;
+  height: 170px;
+  overflow-y: auto;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .techstack {
+    display: block;
+    align-self: center;
+    margin: 5px;
+    border: solid #fffffd 1px;
+    background-color: #0c2138;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .techstack:hover {
+    border-color: #e6a10e;
+    cursor: pointer;
+  }
+  .tech {
+    display: none;
+  }
+  .techsModal {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    max-height: 250px;
+    min-height: 112px;
+    overflow-y: auto;
   }
 }

@@ -1,0 +1,28 @@
+.techt {
+  /* border: solid rgb(70, 69, 78) 1px; */
+  border-radius: 20%;
+  margin: 3px;
+  width: fit-content;
+  padding: 5px;
+  width: 110px;
+  display: flex;
+  font-size: 0.9rem;
+  max-height: 50px;
+}
+.icon {
+  width: 110px;
+  height: 30px;
+  margin: 5px;
+}
+.name {
+  font-size: 0.8rem;
+  color: aliceblue;
+  font-weight: 100;
+  justify-self: center;
+  align-self: center;
+}
+@media (max-width: 600px) {
+  .techt {
+    height: 200px;
+  }
+}
