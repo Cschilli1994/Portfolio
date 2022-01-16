@@ -1,10 +1,5 @@
-.container {
-  padding: 0 2rem;
-}
-
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -51,6 +46,7 @@
   font-size: 3rem;
   padding: 20px;
   background-color: #0c2138;
+  border-bottom: #e6a10e solid 10px;
 }
 
 .title,
@@ -87,8 +83,9 @@
   text-align: left;
   color: #eaeaea;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
+  /* border-radius: 10px; */
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 400px;
   min-height: 600px;
@@ -150,6 +147,22 @@
 }
 .techstack:hover {
   cursor: pointer;
+  color: #e6a10e;
+}
+.contact {
+  border-bottom: solid 1px #fafafa;
+  border-left: solid 1px #fafafa;
+  border-right: solid 1px #fafafa;
+  padding: 3px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: #fafafa;
+}
+.contact:hover {
+  cursor: pointer;
+  border-bottom: solid 1px #e6a10e;
+  border-left: solid 1px #e6a10e;
+  border-right: solid 1px #e6a10e;
   color: #e6a10e;
 }
 .modal {

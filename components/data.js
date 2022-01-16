@@ -41,7 +41,7 @@ module.exports = [
   {
     title: `System Design-API`,
     image: `https://user-images.githubusercontent.com/52953412/148836604-c77f6c5d-3f15-4751-a535-da84ab69463b.png`,
-    link: `https://github.com/Cschilli1994/project-catwalk`,
+    link: `https://github.com/Cschilli1994/Ratings-Reviews-API`,
     description: `RESTful API for serving ratings and reviews to an E-Commerce web client application. Scaled microservice accross multiple AWS instances. Conducted unit and throughput testing using K6, Jest, Loader.io to achieve over 3000 requests/second with 0% error rates and <100ms latency.`,
     stack: [
       {name: 'Express', icon: 'https://img.shields.io/badge/-Express-20232A?style=for-the-badge&logo=express&logoColor=yellow'},

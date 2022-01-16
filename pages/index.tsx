@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
            Schillinger Portfolio
         </h1>
-        <a>Contact Me</a>
+        <div className={styles.contact}>Contact Me</div>
 
 
         <div className={styles.grid}>
