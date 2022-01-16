@@ -3,13 +3,16 @@ import React from 'react';
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Tech from './Tech';
-
+type techStack = {
+  name: string,
+  icon: string
+}
 interface Props {
   title: string,
   image: string,
   link: string,
   description: string,
-  stack: string[],
+  stack: techStack[],
   modal: Function | null
 }
 
