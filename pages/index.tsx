@@ -36,8 +36,8 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
             <LeftOutlined  disabled = {!proj} className={styles.arrows} onClick = {()=>{
-            proj > 0 ? transition() : null;
-            proj > 0 ? setTimeout(setProj.bind(null, proj - 1), 400) : null;
+            transition();
+            proj > 0 ? setTimeout(setProj.bind(null, proj - 1), 400) : setTimeout(setProj.bind(null, projects.length - 1), 400);
 
           }}/>
           {/* <motion.div
@@ -58,8 +58,8 @@ const Home: NextPage = () => {
               />
           {/* </motion.div> */}
           <RightOutlined className={styles.arrows} onClick = {()=>{
-            proj < projects.length - 1 ? transition() : null;
-            proj < projects.length - 1 ? setTimeout(setProj.bind(null, proj + 1), 400) : null;
+            transition();
+            proj < projects.length - 1 ? setTimeout(setProj.bind(null, proj + 1), 400) : setTimeout(setProj.bind(null, 0), 400) ;
 
           }}/>
         </div>
