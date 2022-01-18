@@ -73,7 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   max-width: 900px;
 }
 
@@ -83,13 +83,13 @@
   text-align: left;
   color: #eaeaea;
   text-decoration: none;
-  border-bottom: 1px solid #eaeaea;
+  /* border-bottom: 1px solid #eaeaea; */
   border-top: 1px solid #eaeaea;
   /* border-radius: 10px; */
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 400px;
-  min-height: 600px;
-  max-height: 600px;
+  max-width: 800px;
+  min-height: 850px;
+  max-height: 1000px;
   display: flex;
   flex-direction: column;
 }
@@ -97,8 +97,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #e6a10e;
-  border-color: #e6a10e;
+  /* color: #e6a10e;
+  border-color: #e6a10e; */
 }
 
 .card h2 {
@@ -125,6 +125,8 @@
 }
 .image:hover {
   cursor: pointer;
+  border-color: #e6a10e;
+  border: #e6a10e solid 3px;
 }
 .tech {
   display: flex;
@@ -150,19 +152,20 @@
   color: #e6a10e;
 }
 .contact {
-  border-bottom: solid 1px #fafafa;
-  border-left: solid 1px #fafafa;
-  border-right: solid 1px #fafafa;
+  border-bottom: solid 3px #fafafa;
+  border-left: solid 3px #fafafa;
+  border-right: solid 3px #fafafa;
   padding: 3px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  font-size: 2rem;
   color: #fafafa;
 }
 .contact:hover {
   cursor: pointer;
-  border-bottom: solid 1px #e6a10e;
-  border-left: solid 1px #e6a10e;
-  border-right: solid 1px #e6a10e;
+  border-bottom: solid 3px #e6a10e;
+  border-left: solid 3px #e6a10e;
+  border-right: solid 3px #e6a10e;
   color: #e6a10e;
 }
 .modal {
@@ -174,6 +177,14 @@
   width: 70%;
   height: 170px;
   overflow-y: auto;
+}
+.arrows {
+  color: #fafafa;
+  font-size: 3rem;
+  margin: 10px;
+}
+.arrows:hover {
+  color: #e6a10e;
 }
 @media (max-width: 600px) {
   .grid {
@@ -204,5 +215,23 @@
     max-height: 250px;
     min-height: 112px;
     overflow-y: auto;
+  }
+  .card {
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+    color: #eaeaea;
+    text-decoration: none;
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    max-width: 400px;
+    min-height: 600px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+  .arrows {
+    display: none;
   }
 }

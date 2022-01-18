@@ -1,8 +1,10 @@
 import { title } from 'process';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Tech from './Tech';
+import { motion } from 'framer-motion';
+import { projTrans, transition } from '../animations'
 type techStack = {
   name: string,
   icon: string
@@ -13,7 +15,8 @@ interface Props {
   link: string,
   description: string,
   stack: techStack[],
-  modal: Function | null
+  modal: Function | null,
+  opacity: number
 }
 
 const Project: React.FC<Props> = function({
@@ -22,8 +25,10 @@ const Project: React.FC<Props> = function({
   link,
   description,
   stack,
-  modal
+  modal,
+  opacity
 }) {
+
   const techStack = (
     <div className = {styles.modal}>
       <div className={styles.techsModal}>
@@ -32,6 +37,13 @@ const Project: React.FC<Props> = function({
     </div>
   );
   return (
+    <motion.div
+            initial = 'out'
+            exit = 'out'
+            variants = {projTrans}
+            transition={transition}
+            animate ={{opacity: opacity, scale: opacity}}
+            >
     <div className={styles.card}>
 
             <h3 className = {styles.ptitle}>{title}</h3>
@@ -50,6 +62,7 @@ const Project: React.FC<Props> = function({
             <p>{description}</p>
 
     </div>
+    </motion.div>
   )
 }
 export default Project;

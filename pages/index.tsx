@@ -1,12 +1,20 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css'
 import Project from '../components/Project'
 import projects from '../components/data'
+
+
 const Home: NextPage = () => {
   const [modal, setModal] = useState(null);
-
+  const [proj, setProj] = useState(0);
+  const [opacity, setOpacity] = useState(1);
+  const transition = function() {
+    setOpacity(0);
+    setTimeout(setOpacity.bind(null,1), 500);
+  }
   return (
     <div
       onClick = {(e)=> {
@@ -21,24 +29,39 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-           Schillinger Portfolio
+           Chris Schillinger
         </h1>
         <div className={styles.contact}>Contact Me</div>
 
 
         <div className={styles.grid}>
-         {projects.map((project, i) => (
-           <Project
-              key = {`Project-${i}`}
-              title = {project.title}
-              description = {project.description}
-              link = {project.link}
-              image = {project.image}
-              stack = {project.stack}
-              modal = {setModal}
-           />
-         ))}
+            <LeftOutlined  disabled = {!proj} className={styles.arrows} onClick = {()=>{
+            proj > 0 ? transition() : null;
+            proj > 0 ? setTimeout(setProj.bind(null, proj - 1), 400) : null;
 
+          }}/>
+          {/* <motion.div
+            initial = 'out'
+            animate = 'in'
+            exit = 'out'
+            variants = {projTrans}
+            transition={transition}
+            > */}
+              <Project
+                  title = {projects[proj].title}
+                  description = {projects[proj].description}
+                  link = {projects[proj].link}
+                  image = {projects[proj].image}
+                  stack = {projects[proj].stack}
+                  modal = {setModal}
+                  opacity={opacity}
+              />
+          {/* </motion.div> */}
+          <RightOutlined className={styles.arrows} onClick = {()=>{
+            proj < projects.length - 1 ? transition() : null;
+            proj < projects.length - 1 ? setTimeout(setProj.bind(null, proj + 1), 400) : null;
+
+          }}/>
         </div>
         {modal}
       </main>
