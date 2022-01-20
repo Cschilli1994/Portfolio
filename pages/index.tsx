@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   const [cont, setCont] = useState(null);
   const [proj, setProj] = useState(0);
   const [opacity, setOpacity] = useState(1);
-  const contact = (<Contact/>);
+  const contact = (<Contact close={setCont}/>);
   const transition = function() {
     setOpacity(0);
     setTimeout(setOpacity.bind(null,1), 500);

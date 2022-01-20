@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import styles from '../styles/Contact.module.css'
-
-const Contact: React.FC = function() {
+interface Props {
+  close: Function
+}
+const Contact: React.FC<Props> = function({
+  close
+}) {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
@@ -30,11 +34,25 @@ const Contact: React.FC = function() {
       className={styles.submit}
       type='submit'
       value='Close'
+      onClick={(e)=> {
+        e.preventDefault();
+        close(null);
+      }}
      />
      <input
       className={styles.submit}
       type='submit'
       value='Send'
+      onClick={(e)=> {
+        e.preventDefault();
+        const data = {
+          email,
+          subject,
+          message
+        }
+        console.log(data);
+        close(null)
+      }}
      />
      </div>
     </form>
