@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css'
@@ -21,10 +21,27 @@ const Home: NextPage = () => {
   //value for animation
   const [opacity, setOpacity] = useState(1);
   const contact: any = (<Contact close={setCont}/>);
+  const autoChange = function() {
+    setModal(null)
+    if (proj < projects.length - 1) {
+      transition();
+      setTimeout(setProj.bind(null, proj + 1), 400);
+    } else {
+      transition();
+      setTimeout(setProj.bind(null, 0), 400)
+    }
+  }
   const transition = function() {
     setOpacity(0);
     setTimeout(setOpacity.bind(null,1), 500);
   }
+  //
+  useEffect(()=>{
+    const interval = setInterval(autoChange, 10000);
+    return function cleanup() {
+      clearInterval(interval);
+    }
+  })
   return (
     <div
       onClick = {(e)=> {
