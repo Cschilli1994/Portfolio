@@ -5,12 +5,15 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css'
 import Project from '../components/Project'
 import projects from '../components/data'
+import Contact from '../components/Contact'
 
 
 const Home: NextPage = () => {
   const [modal, setModal] = useState(null);
+  const [cont, setCont] = useState(null);
   const [proj, setProj] = useState(0);
   const [opacity, setOpacity] = useState(1);
+  const contact = (<Contact/>);
   const transition = function() {
     setOpacity(0);
     setTimeout(setOpacity.bind(null,1), 500);
@@ -31,7 +34,17 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
            Chris Schillinger
         </h1>
-        <div className={styles.contact}>Contact Me</div>
+        <div
+          onClick={()=> {
+            if (!cont) {
+              setCont(contact);
+            } else{
+              setCont(null);
+            }
+
+          }}
+          className={styles.contact}>
+            Contact Me</div>
 
 
         <div className={styles.grid}>
@@ -64,6 +77,7 @@ const Home: NextPage = () => {
           }}/>
         </div>
         {modal}
+        {cont}
       </main>
 
       <footer className={styles.footer}>

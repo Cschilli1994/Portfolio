@@ -152,21 +152,22 @@
   color: #e6a10e;
 }
 .contact {
-  border-bottom: solid 3px #fafafa;
-  border-left: solid 3px #fafafa;
-  border-right: solid 3px #fafafa;
+  border-bottom: solid 3px #e6a10e;
+  border-left: solid 3px #e6a10e;
+  border-right: solid 3px #e6a10e;
   padding: 3px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   font-size: 2rem;
-  color: #fafafa;
+  color: #e6a10e;
 }
 .contact:hover {
   cursor: pointer;
-  border-bottom: solid 3px #e6a10e;
-  border-left: solid 3px #e6a10e;
-  border-right: solid 3px #e6a10e;
-  color: #e6a10e;
+  background-color: #0c2138;
+  /* border-bottom: solid 3px white;
+  border-left: solid 3px white;
+  border-right: solid 3px white; */
+  color: whitesmoke;
 }
 .modal {
   position: fixed;
@@ -222,8 +223,7 @@
     text-align: left;
     color: #eaeaea;
     text-decoration: none;
-    border-bottom: 1px solid #eaeaea;
-    border-top: 1px solid #eaeaea;
+
     transition: color 0.15s ease, border-color 0.15s ease;
     max-width: 400px;
     min-height: 600px;

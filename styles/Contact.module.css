@@ -1,0 +1,55 @@
+.contactCard {
+  z-index: 1;
+  width: 60%;
+  padding: 20px;
+
+  background-color: #0c2138;
+  border-radius: 10px;
+  color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  border: solid 3px whitesmoke;
+}
+
+.input {
+  margin: 10px;
+  background-color: #2d2e30;
+  color: whitesmoke;
+  min-height: 30px;
+  border: none;
+  border-radius: 10px;
+}
+.textarea {
+  resize: none;
+  min-height: 200px;
+  background-color: #2d2e30;
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 8px;
+}
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.submit {
+  border-radius: 5px;
+  border: solid 2px #e6a10e;
+  border: solid 2px whitesmoke;
+  background-color: #0c2138;
+  background-color: rgb(32 35 42);
+  color: whitesmoke;
+}
+.submit:hover {
+  cursor: pointer;
+  border: solid 2px #e6a10e;
+  color: #e6a10e;
+}
+@media (max-width: 600px) {
+  .contactCard {
+    width: 80%;
+  }
+}
