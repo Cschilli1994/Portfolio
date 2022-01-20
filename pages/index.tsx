@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css'
@@ -9,11 +9,18 @@ import Contact from '../components/Contact'
 
 
 const Home: NextPage = () => {
+  //badge modal
   const [modal, setModal] = useState(null);
+
+  //contact modal
   const [cont, setCont] = useState(null);
+
+  //current project index
   const [proj, setProj] = useState(0);
+
+  //value for animation
   const [opacity, setOpacity] = useState(1);
-  const contact = (<Contact close={setCont}/>);
+  const contact: any = (<Contact close={setCont}/>);
   const transition = function() {
     setOpacity(0);
     setTimeout(setOpacity.bind(null,1), 500);
